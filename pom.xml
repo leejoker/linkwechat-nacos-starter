@@ -70,23 +70,4 @@
             <version>${nacos.cloud.version}</version>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${springboot.version}</version>
-                <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.springframework.boot</groupId>
-                            <artifactId>spring-boot-configuration-processor</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
 </project>

@@ -11,9 +11,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Data
 @ConfigurationProperties(prefix = "linkwechat.nacos")
 public class LinkWechatNacosProperties {
-    private boolean cloud = false;
     private String host = "127.0.0.1";
     private Integer port = 8848;
     private String namespace;
-    private String fileExtension = "yml";
 }
