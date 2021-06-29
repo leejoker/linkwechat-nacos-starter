@@ -1,2 +1,4 @@
+org.springframework.cloud.bootstrap.BootstrapConfiguration=\
+com.linkwechat.bootstrap.LinkWechatNacosBootstrapConfiguration
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 com.linkwechat.autoconfigure.LinkWechatNacosAutoConfiguration

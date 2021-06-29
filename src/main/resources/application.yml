@@ -1,7 +1,0 @@
-spring:
-  application:
-    name: link-wechat
-  cloud:
-    nacos:
-      config:
-        file-extension: yaml
