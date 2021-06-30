@@ -9,9 +9,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
 /**
- * @author leejoker <1056650571@qq.com>
- * @version 0.1-SNAPSHOT
- * @date 2021/6/29 19:23
+ * @author leejoker
+ * @version 1.0.0
  */
 @Configuration(proxyBeanMethods = false)
 @AutoConfigureBefore(value = NacosDiscoveryAutoConfiguration.class)

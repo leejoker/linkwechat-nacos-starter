@@ -10,9 +10,8 @@ import org.springframework.util.StringUtils;
 import javax.annotation.PostConstruct;
 
 /**
- * @author leejoker <1056650571@qq.com>
- * @version 0.1-SNAPSHOT
- * @date 2021/4/19 10:18
+ * @author leejoker
+ * @version 1.0.0
  */
 @Data
 @ConfigurationProperties(prefix = "linkwechat.nacos")
