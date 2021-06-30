@@ -8,9 +8,9 @@
         <version>2.3.7.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.gitee.linkwechat</groupId>
+    <groupId>io.github.leejoker</groupId>
     <artifactId>linkwechat-nacos-starter</artifactId>
-    <version>3.1.0</version>
+    <version>1.0.0</version>
     <name>linkwechat-nacos-starter</name>
     <description>nacos plugin for linkwechat</description>
 
