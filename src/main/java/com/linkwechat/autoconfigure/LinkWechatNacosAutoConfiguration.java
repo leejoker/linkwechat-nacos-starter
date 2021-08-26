@@ -6,6 +6,7 @@ import com.alibaba.cloud.nacos.NacosServiceManager;
 import com.alibaba.cloud.nacos.discovery.NacosDiscoveryAutoConfiguration;
 import com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery;
 import com.linkwechat.LinkWechatNacosProperties;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
@@ -31,6 +32,10 @@ public class LinkWechatNacosAutoConfiguration {
         nacosDiscoveryProperties.setServerAddr(String.format("%s:%d", linkWechatNacosProperties.getHost(), linkWechatNacosProperties.getPort()));
         nacosDiscoveryProperties.setNamespace(linkWechatNacosProperties.getNamespace());
         nacosDiscoveryProperties.setService(linkWechatNacosProperties.getApplicationName());
+        if (StringUtils.isNotBlank(linkWechatNacosProperties.getUsername())) {
+            nacosDiscoveryProperties.setUsername(linkWechatNacosProperties.getUsername());
+            nacosDiscoveryProperties.setPassword(linkWechatNacosProperties.getPassword());
+        }
         return nacosDiscoveryProperties;
     }
 

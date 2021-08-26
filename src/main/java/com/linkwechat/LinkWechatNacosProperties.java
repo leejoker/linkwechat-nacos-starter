@@ -19,6 +19,8 @@ public class LinkWechatNacosProperties {
     private String host = "127.0.0.1";
     private Integer port = 8848;
     private String namespace;
+    private String username;
+    private String password;
     private final String extension = "yaml";
     private final String applicationName = "link-wechat";
 
@@ -44,6 +46,12 @@ public class LinkWechatNacosProperties {
         }
         if (StringUtils.isEmpty(this.getNamespace())) {
             this.setNamespace(environment.resolvePlaceholders("${linkwechat.nacos.namespace:}"));
+        }
+        if (StringUtils.isEmpty(this.getUsername())) {
+            this.setUsername(environment.resolvePlaceholders("${linkwechat.nacos.username:}"));
+        }
+        if (StringUtils.isEmpty(this.getPassword())) {
+            this.setPassword(environment.resolvePlaceholders("${linkwechat.nacos.password:}"));
         }
     }
 }
