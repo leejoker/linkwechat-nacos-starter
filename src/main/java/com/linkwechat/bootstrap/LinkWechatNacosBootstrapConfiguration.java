@@ -2,6 +2,7 @@ package com.linkwechat.bootstrap;
 
 import com.alibaba.cloud.nacos.NacosConfigProperties;
 import com.linkwechat.LinkWechatNacosProperties;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -30,6 +31,10 @@ public class LinkWechatNacosBootstrapConfiguration {
         nacosConfigProperties.setRefreshEnabled(true);
         nacosConfigProperties.setFileExtension(linkWechatNacosProperties.getExtension());
         nacosConfigProperties.setPrefix(linkWechatNacosProperties.getApplicationName());
+        if (StringUtils.isNotBlank(linkWechatNacosProperties.getUsername())) {
+            nacosConfigProperties.setUsername(linkWechatNacosProperties.getUsername());
+            nacosConfigProperties.setPassword(linkWechatNacosProperties.getPassword());
+        }
         return nacosConfigProperties;
     }
 }
