@@ -22,7 +22,7 @@ public class LinkWechatNacosProperties {
     private String username;
     private String password;
     private final String extension = "yaml";
-    private final String applicationName = "link-wechat";
+    private String applicationName = "link-wechat";
 
     @Autowired
     @JsonIgnore
