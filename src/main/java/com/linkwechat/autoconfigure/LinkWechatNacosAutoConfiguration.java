@@ -10,6 +10,7 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -17,8 +18,9 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @author leejoker
- * @version 1.0.0
+ * @version 1.0.4
  */
+@ConditionalOnProperty(name = {"linkwechat.nacos.enabled"}, matchIfMissing = true)
 @Configuration(proxyBeanMethods = false)
 @AutoConfigureBefore(value = {NacosConfigAutoConfiguration.class, NacosDiscoveryAutoConfiguration.class})
 public class LinkWechatNacosAutoConfiguration {
@@ -40,10 +42,8 @@ public class LinkWechatNacosAutoConfiguration {
     }
 
     @Bean
-    public NacosServiceDiscovery nacosServiceDiscovery(
-            NacosDiscoveryProperties nacosProperties,
-            NacosServiceManager nacosServiceManager,
-            LinkWechatNacosProperties linkWechatNacosProperties) {
+    public NacosServiceDiscovery nacosServiceDiscovery(NacosDiscoveryProperties nacosProperties, NacosServiceManager nacosServiceManager,
+                                                       LinkWechatNacosProperties linkWechatNacosProperties) {
         nacosProperties.setService(linkWechatNacosProperties.getApplicationName());
         return new NacosServiceDiscovery(nacosProperties, nacosServiceManager);
     }

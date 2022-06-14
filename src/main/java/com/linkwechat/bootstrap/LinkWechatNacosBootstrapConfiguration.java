@@ -12,13 +12,12 @@ import org.springframework.context.annotation.Primary;
 
 /**
  * @author leejoker
- * @version 1.0.0
+ * @version 1.0.4
  */
 @Configuration(proxyBeanMethods = false)
 @EnableDiscoveryClient
 @ConditionalOnProperty(
-        name = {"linkwechat.nacos.enabled"},
-        matchIfMissing = true
+        name = {"linkwechat.nacos.enabled"}, matchIfMissing = true
 )
 @EnableConfigurationProperties({LinkWechatNacosProperties.class})
 public class LinkWechatNacosBootstrapConfiguration {

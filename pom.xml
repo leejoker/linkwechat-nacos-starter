@@ -10,7 +10,7 @@
     </parent>
     <groupId>io.github.leejoker</groupId>
     <artifactId>linkwechat-nacos-starter</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <name>linkwechat-nacos-starter</name>
     <description>nacos plugin for linkwechat</description>
 
@@ -156,8 +156,7 @@
                             <goal>sign</goal>
                         </goals>
                         <configuration>
-                            <keyname>0x54668286</keyname>
-                            <passphraseServerId>0x54668286</passphraseServerId>
+                            <keyname>75AB1A8156D4BBA4</keyname>
                         </configuration>
                     </execution>
                 </executions>
